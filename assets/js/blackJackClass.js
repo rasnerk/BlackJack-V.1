@@ -65,7 +65,7 @@ class BlackJack {
         let dealersSecondCard = this.randomCardSelector();
         let dealersHiddenCard = this.createCard(dealersSecondCard);
         dealersHiddenCard.classList.add('dealers-hidden-card')
-        let dealersBackCard = this.createCard({link: './imgs/back-of-card.jpg'})
+        let dealersBackCard = this.createCard({link: 'assets/imgs/back-of-card.jpg'})
         dealersBackCard.classList.add('back-of-card')
         // Display the cards to the screen 
         document.querySelector('.dealers-hand').append( this.createCard(dealersFirstCard), dealersHiddenCard, dealersBackCard )
