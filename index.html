@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Black Jack</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <!-- Load in all 52 cards in a deck -->
+    <script src="./cards.js"></script>
+    <!-- Load in BlackJack Class -->
+    <script src="./blackJackClass.js"></script>
+    <!-- Index.js -->
+    <script defer src="./index.js"></script>
+    <!-- Stylesheet -->
+    <link href="./index.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Players Balance -->
+    <div class="players-balance">
+        <h3>Balance</h3>
+        <div class="balance"></div>
+    </div>
+    <!-- Table Background -->
+    <div class="table">
+        <img src="./imgs/blackjack-table.png" alt="table">
+    </div>
+    <!-- Dealer -->
+    <div class="dealer">
+        <div class="dealers-hand"></div>
+    </div>
+    <!-- Player -->
+    <div class="player">
+       <div class="players-hand"></div>
+    </div>
+    <!-- Controllables -->
+    <div class="options">
+        <!-- Bet Options -->
+        <div class="bet-options">
+            <div class="bet-amount"></div>
+            <button class="btn-sm btn-success increase-bet">+</button>
+            <button class="btn-sm btn-danger decrease-bet">-</button>
+        </div>
+        <!-- Game Options -->
+        <div class="game-options">
+            <button class="btn btn-primary deal">Deal</button>
+            <button class="btn btn-primary hit">Hit</button>
+            <button class="btn btn-primary stand">Stand</button>
+            <button class="btn btn-primary double">Double</button>
+            <button class="btn btn-primary split">Split</button>
+        </div>
+    </div>
+</body>
+</html>
