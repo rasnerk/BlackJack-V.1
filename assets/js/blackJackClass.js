@@ -338,6 +338,10 @@ class BlackJack {
     }
     // Better
     endGame () {
+        if (this.gameInMotion === false) {
+            this.gameControls.forEach( (control) => document.querySelector(control).disabled = true )
+            return
+        }
         switch(this.gameResult) {
             case null: 
                 this.playerBalance = this.playerBalance;

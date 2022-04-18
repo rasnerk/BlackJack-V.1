@@ -74,59 +74,6 @@ body {
     margin-left: 10em;
 }
 
-.options {
-    display: flex;
-    position: fixed;
-    flex-direction: column;
-    width: 100vw;
-    bottom: 0;
-    /* justify-content: space-evenly; */
-}
-
-.game-options {
-    display: flex;
-    flex-direction: row;
-}
-
-.game-options button {
-    margin: 0.25em;
-}
-
-.bet-amount {
-    margin-right: 0.5em;
-    font-size: 1em;
-    font-weight: 600;
-    height: 2em;
-    width: 6em;
-    line-height: 2em;
-    text-align: center;
-    background-color: #d1e0e0;
-}
-
-.bet-options {
-    display: flex;
-    margin: 1em;
-}
-
-.bet-options button {
-    margin: 0.15em;
-    height: 2em;
-    line-height: 0;
-}
-
-.players-balance {
-    position: fixed;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    left: 0;
-    top: 40%;
-    min-width: 15em;
-    min-height: 10vh;
-    color: white;
-    background-color: #1f2e2e;
-}
-
 .player {
     align-items: center;
     justify-content: center;
