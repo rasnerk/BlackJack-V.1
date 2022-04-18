@@ -62,3 +62,48 @@
     color: white;
     background-color: #1f2e2e;
 }
+
+/* Media Queries */
+@media screen and (max-width: 1100px) {
+    /* Controllables */
+    .options {
+        width: 16vh;
+        left: 5%;
+        bottom: 0;
+    }
+
+    .players-balance {
+        width: 11em;
+    }
+
+    .bet-amount {
+        width: 4.5em;
+    }
+
+    .game-options {
+        flex-direction: column;
+        width: 7em;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    /* Controllables */
+    .options {
+        width: 14vh;
+        left: 6%;
+        bottom: 0;
+    }
+
+    .players-balance {
+        width: 9em;
+    }
+
+    .bet-amount {
+        width: 4em;
+    }
+
+    .game-options {
+        flex-direction: column;
+        width: 6em;
+    }
+}
