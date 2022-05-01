@@ -35,6 +35,37 @@ body {
     height: 100%;
 }
 
+.message {
+    display: none;
+    position: fixed;
+    top: 45%;
+    left: 40%;
+    text-decoration: underline;
+    text-align: center;
+    font-weight: 600;
+    font-size: 2.5em;
+    vertical-align: middle;
+    background-color: #1f2e2e;
+    padding: 1em;
+    border-radius: 0.3em;
+}
+
+.win {
+    color: #5cb85c;
+}
+
+.lose {
+    color: #d9534f;
+}
+
+.push {
+    color: #f0ad4e;
+}
+
+.displaying-message {
+    opacity: 0.75;
+}
+
 @media screen and (max-width: 900px) {
     .dealer {
         padding-top: 7em;

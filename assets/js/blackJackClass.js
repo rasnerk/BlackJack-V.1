@@ -16,7 +16,7 @@ class BlackJack {
     startGame () {
         // Is the player trying to bet more than they have?
         if (this.playerBalance < this.playerBet) {
-            alert('Cannot Bet more than your balance!');
+            this.displayMessage('Cannot Bet more than your balance!','push');
             return;
         }
         document.querySelector('.bet-amount').innerText = `$${this.playerBet}`;
@@ -25,7 +25,7 @@ class BlackJack {
         if (this.handsDealt === 0) this.shuffleDeck();
         // If the shoe is almost out we need to reshuffle the deck & reset the game
         if (this.handsDealt > 24 ) {
-            alert("Reshuffling the Cards...")
+            this.displayMessage("Reshuffling the Cards...",'push')
             this.resetGame();
         }
         // We need to reset all in game variables
@@ -258,7 +258,7 @@ class BlackJack {
         }
 
         if (this.playersHand[0] > 21) {
-            alert('Player Lost Double!')
+            this.displayMessage('Player Lost Double!','lose')
             this.gameResult = false;
             this.endGame();
             return;
@@ -276,14 +276,14 @@ class BlackJack {
             setTimeout( () => {
                 if (this.playersHand[0] === this.dealersHand[0]) {
                     this.gameResult = null;
-                    alert('Push!')
+                    this.displayMessage('Push!','push')
                 }
                 else if (this.playersHand[0] > this.dealersHand[0] || this.dealersHand[0] > 21) {
                     this.gameResult = true;
-                    alert("Player Wins!")
+                    this.displayMessage("Player Wins!",'win')
                 } else {
                     this.gameResult = false;
-                    alert('Dealer Wins!')
+                    this.displayMessage('Dealer Wins!','lose')
                 }
                 this.endGame();
             },100)
@@ -292,7 +292,7 @@ class BlackJack {
     // idk how to change this yet
     double () {
         if (this.playerBalance < this.playerBet * 2) {
-            alert('Cannot Bet more than your balance!');
+            this.displayMessage('Cannot Bet more than your balance!','lose')
             return;
         }
         this.playerBet = this.playerBet * 2;
@@ -314,17 +314,17 @@ class BlackJack {
             this.playerSplit.first.push(starterCards[0].value)
             this.playerSplit.second.push(starterCards[0].value)
         } else {
-            alert('Can only split cards that have the same value!')
+            this.displayMessage('Can only split cards that have the same value!','push')
         }
     }
     // Good
     increaseBet () {
-        this.isGameStarted() ? alert("Cannot Change Bet Size During Game!") : this.playerBet += 5;
+        this.isGameStarted() ? this.displayMessage("Cannot Change Bet Size During Game!",'push') : this.playerBet += 5;
         document.querySelector('.bet-amount').innerText = `$${this.playerBet}`
     }
     // Good
     decreaseBet () {
-        this.isGameStarted() ? alert("Cannot Change Bet Size During Game!") : this.playerBet -= 5;
+        this.isGameStarted() ? this.displayMessage("Cannot Change Bet Size During Game!",'push') : this.playerBet -= 5;
         document.querySelector('.bet-amount').innerText = `$${this.playerBet}`
     }
     // Good
@@ -334,7 +334,7 @@ class BlackJack {
     // Good
     bust () {
         this.gameResult = false;
-        alert('Player Busted!')
+        this.displayMessage('Player Busted!', 'lose')
     }
     // Better
     endGame () {
@@ -367,5 +367,21 @@ class BlackJack {
         document.querySelector(".split").addEventListener('click', () => this.split() )
         document.querySelector(".increase-bet").addEventListener('click', () => this.increaseBet() )
         document.querySelector(".decrease-bet").addEventListener('click', () => this.decreaseBet() )
+    }
+    displayMessage (message,type) {
+        let el = document.querySelector('.message');
+        let classes = ['win','lose','push'];
+
+        el.innerText = message;
+        classes.forEach( c => el.classList.remove(c))
+        el.classList.add(type);
+        el.style.display = 'block';
+        document.querySelector('main').classList.add('displaying-message');
+
+        setTimeout( () => {
+            el.style.display = 'none';
+            document.querySelector('main').classList.remove('displaying-message');
+        },2500)
+
     }
 }

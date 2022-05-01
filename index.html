@@ -12,7 +12,7 @@
     <!-- Load in all 52 cards in a deck -->
     <script src="assets/js/cards.js"></script>
     <!-- Load in BlackJack Class -->
-    <script src="assets/js/blackJackClass.js"></script>
+    <script src="assets/js/blackjackClass.js"></script>
     <!-- Script.js -->
     <script defer src="assets/js/script.js"></script>
     <!-- Stylesheet -->
@@ -22,41 +22,44 @@
     <!-- Cards Stylesheet -->
     <link href="assets/css/cards.css" rel="stylesheet">
 </head>
-
 <body>
-    <!-- Table Background -->
-    <div class="table">
-        <img src="assets/imgs/blackjack-table.png" alt="table">
-    </div>
-    <!-- Dealer -->
-    <div class="dealer">
-        <div class="dealers-hand"></div>
-    </div>
-    <!-- Player -->
-    <div class="player">
-       <div class="players-hand"></div>
-    </div>
-    <!-- Controllables -->
-    <div class="options">
-        <!-- Players Balance -->
-        <div class="players-balance">
-            <h3>Balance</h3>
-            <div class="balance"></div>
+    <main>
+        <!-- Table Background -->
+        <div class="table">
+            <img src="assets/imgs/blackjack-table.png" alt="table">
         </div>
-        <!-- Bet Options -->
-        <div class="bet-options">
-            <div class="bet-amount"></div>
-            <button class="btn-sm btn-success increase-bet">+</button>
-            <button class="btn-sm btn-danger decrease-bet">-</button>
+        <!-- Dealer -->
+        <div class="dealer">
+            <div class="dealers-hand"></div>
         </div>
-        <!-- Game Options -->
-        <div class="game-options">
-            <button class="btn btn-primary deal">Deal</button>
-            <button class="btn btn-primary hit">Hit</button>
-            <button class="btn btn-primary stand">Stand</button>
-            <button class="btn btn-primary double">Double</button>
-            <button class="btn btn-primary split">Split</button>
+        <!-- Player -->
+        <div class="player">
+        <div class="players-hand"></div>
         </div>
-    </div>
+        <!-- Controllables -->
+        <div class="options">
+            <!-- Players Balance -->
+            <div class="players-balance">
+                <h3>Balance</h3>
+                <div class="balance"></div>
+            </div>
+            <!-- Bet Options -->
+            <div class="bet-options">
+                <div class="bet-amount"></div>
+                <button class="btn-sm btn-success increase-bet">+</button>
+                <button class="btn-sm btn-danger decrease-bet">-</button>
+            </div>
+            <!-- Game Options -->
+            <div class="game-options">
+                <button class="btn btn-primary deal">Deal</button>
+                <button class="btn btn-primary hit">Hit</button>
+                <button class="btn btn-primary stand">Stand</button>
+                <button class="btn btn-primary double">Double</button>
+                <button class="btn btn-primary split">Split</button>
+            </div>
+        </div>
+    </main>
+    <!-- Game Message -->
+    <div class="message"></div>
 </body>
 </html>
